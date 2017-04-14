@@ -1,0 +1,11 @@
+.iconpicker-popover {
+  border: 1px solid #ddd;
+}
+.iconpicker-search {
+  box-sizing: border-box !important;
+  padding: 10px;
+  width: 100%;
+}
+.iconpicker .iconpicker-item.iconpicker-selected {
+  background-color: #337ab7;
+}
