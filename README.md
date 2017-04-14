@@ -8,12 +8,12 @@ INSTALLATION
 
 1. Install the "Font Awesome" library.
     - LIBRARY should be at libraries/fontawesome.
-      - [https://github.com/FortAwesome/Font-Awesome].
+      - https://github.com/FortAwesome/Font-Awesome
     - CSS should be at libraries/fontawesome/css.
     - JS should be at libraries/fontawesome/js.
 2. Install the "Font Awesome Icon Picker" library.
     - LIBRARY should be at libraries/fontawesome-iconpicker.
-      - [https://github.com/itsjavi/fontawesome-iconpicker].
+      - https://github.com/itsjavi/fontawesome-iconpicker
     - CSS should be at libraries/fontawesome-iconpicker/dist/css.
     - JS should be at libraries/fontawesome-iconpicker/dist/js.
 3. Enable the fontawesome_menu module.
