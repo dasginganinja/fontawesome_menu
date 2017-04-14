@@ -56,8 +56,6 @@ function fontawesome_menu_libraries_info() {
     ),
   );
 
-  // "version": "1.3.0",
-
   return $libraries;
 }
 
