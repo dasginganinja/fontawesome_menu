@@ -2,4 +2,5 @@ name = Font Awesome Menu
 core = 7.x
 package = Menu
 version = 7.x-1.0
+dependencies[] = jquery_update
 dependencies[] = libraries
