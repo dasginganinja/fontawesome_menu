@@ -1,6 +1,10 @@
 # Font Awesome Menu
 
-This Drupal 7 module provides an icon field when configuring menu links that implements a helpful icon widget picker. The icon element is processed in using theme_menu_link(). This module does not implement any assets such as css or fonts to your theme front-end, but does provide libraries integration for fontawesome and fontawesome-iconpicker on menu link configuration page. Keep in mind, since the fontawesome css and font assets themselves are not included in your theme's front-end you will want to be sure that the library version that you are using on the admin side matches the version you use on your theme's front-end side. You can get library version numbers at `admin/reports/libraries`.
+This Drupal 7 module provides an icon field when configuring menu links that implements a helpful icon widget picker. The icon element is processed in using theme_menu_link().
+
+This module does not implement any assets such as css or fonts to your theme front-end, but does provide libraries integration for fontawesome and fontawesome-iconpicker on menu link configuration page.
+
+Keep in mind, since the fontawesome css and font assets themselves are not included in your theme's front-end you will want to be sure that the library version that you are using on the admin side matches the version you use on your theme's front-end side. You can get library version numbers at `admin/reports/libraries`.
 
 ## Installation
 See fontawesome_menu_libraries_info() for specific library assets.
