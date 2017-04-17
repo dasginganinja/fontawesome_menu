@@ -121,7 +121,7 @@ function fontawesome_menu_menu_link($variables) {
   if (!empty($variables['element']['#original_link']['fa_icon'])) {
     $icon = $variables['element']['#original_link']['fa_icon'];
     $icon_markup = '<i class="fa ' . $icon . '"></i>';
-    $title = $icon_markup . ' ' . $element['#title'];
+    $title = $icon_markup . ' <span class="menu-link-title">' . $element['#title'] . '</span>';
     $element['#localized_options']['html'] = TRUE;
   }
   else {
