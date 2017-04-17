@@ -92,12 +92,11 @@ function fontawesome_menu_form_menu_edit_item_alter(&$form, &$form_state, $form_
     $form['#attached']['css'][] = $path . '/css/fontawesome-iconpicker-overrides.css';
   }
 
-  $icon = fontawesome_menu_get_icon($form['mlid']['#value']);
   $form['fa_icon'] = array(
     '#type' => 'textfield',
     '#title' => t('Icon'),
     '#description' => t('The icon to be used with the menu item. Example: <em>fa-globe</em>.'),
-    '#default_value' => $icon,
+    '#default_value' => fontawesome_menu_get_icon($form['mlid']['#value']),
     '#size' => 60,
     '#maxlength' => 128,
   );
@@ -138,8 +137,8 @@ function fontawesome_menu_menu_link($variables) {
 /**
  * Update menu_links table for the fa_icon field.
  *
- * @param  object $link
- *         A menu link object
+ * @param  array $link
+ *         A menu link item array.
  */
 function fontawesome_menu_db_update($link) {
   db_update('menu_links')
@@ -152,7 +151,7 @@ function fontawesome_menu_db_update($link) {
  * Get a menu link icon.
  *
  * @param string $mlid
- *        Required string of a valid menu link id.
+ *        Menu link id.
  *
  * @return string
  *         The icon for a given mlid.
