@@ -6,6 +6,9 @@ This module does not implement any assets such as css or fonts to your theme fro
 
 Keep in mind, since the fontawesome css and font assets themselves are not included in your theme's front-end you will want to be sure that the library version that you are using on the admin side matches the version you use on your theme's front-end side. You can get library version numbers at `admin/reports/libraries`.
 
+## Dependencies
+- [Libraries API](https://www.drupal.org/project/libraries)
+
 ## Installation
 See fontawesome_menu_libraries_info() for specific library assets.
 
