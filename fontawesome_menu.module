@@ -141,10 +141,12 @@ function fontawesome_menu_menu_link($variables) {
  *         A menu link item array.
  */
 function fontawesome_menu_db_update($link) {
-  db_update('menu_links')
-    ->fields(array('fa_icon' => $link['fa_icon']))
-    ->condition('mlid', $link['mlid'])
-    ->execute();
+  if (isset($link['fa_icon'])) {
+    db_update('menu_links')
+      ->fields(array('fa_icon' => $link['fa_icon']))
+      ->condition('mlid', $link['mlid'])
+      ->execute();
+  }
 }
 
 /**
