@@ -99,6 +99,7 @@ function fontawesome_menu_form_menu_edit_item_alter(&$form, &$form_state, $form_
     '#default_value' => fontawesome_menu_get_icon($form['mlid']['#value']),
     '#size' => 60,
     '#maxlength' => 128,
+    '#field_suffix' => '<span class="input-group-addon"></span>',
   );
 }
 
