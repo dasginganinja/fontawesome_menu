@@ -5,6 +5,51 @@
  */
 
 /**
+ * Implements hook_requirements().
+ */
+function fontawesome_menu_requirements($phase) {
+  $requirements = array();
+  $t = get_t();
+
+  $admin_theme = variable_get('admin_theme');
+  $admin_theme = 'theme_' . $admin_theme . '_settings';
+  $admin_theme = variable_get($admin_theme);
+  $admin_jquery_version = $admin_theme['jquery_update_jquery_version'];
+  // If the admin theme jquery version is empty check the default.
+  if (empty($admin_jquery_version)) {
+    (float) $admin_jquery_version = variable_get('jquery_update_jquery_version');
+  }
+  elseif ($admin_jquery_version == 'default') {
+    $admin_jquery_version = 1.4;
+  }
+  else {
+    (float) $admin_jquery_version = $admin_jquery_version;
+  }
+
+  switch($phase) {
+    case 'runtime':
+      if ($admin_jquery_version < 1.7) {
+        $requirements['fa_menu_jquery'] = array(
+          'title' => $t('Font Awesome Menu jQuery Version'),
+          'severity' => REQUIREMENT_WARNING,
+          'description' => $t('Font Awesome Icon Picker requires that you use a version of jquery greater than or equal to 1.7. Your version is jQuery !version.', array('!version' => $admin_jquery_version)),
+          'value' => $t('Insufficient jQuery version'),
+        );
+      }
+      else {
+        $requirements['fa_menu_jquery'] = array(
+          'title' => $t('Font Awesome Menu jQuery Version'),
+          'severity' => REQUIREMENT_OK,
+          'value' => $t('jQuery ') . $admin_jquery_version,
+        );
+      }
+    break;
+   }
+  return $requirements;
+}
+
+
+/**
  * Implements hook_install().
  */
 function fontawesome_menu_install() {
